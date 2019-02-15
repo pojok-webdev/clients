@@ -4,6 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppvarService {
-
-  constructor() { }
+  server
+  port
+  constructor() {
+    this.server = 'localhost'
+    this.port = 2119
+  }
 }

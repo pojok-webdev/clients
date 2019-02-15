@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>clients</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-menu-toggle auto-hide="false" *ngFor="let p of clients">
+      <ion-item [routerDirection]="'root'" [routerLink]="[p.name]">
+        <ion-icon slot="start" [name]="p.name"></ion-icon>
+        <ion-label>
+          {{p.name}}
+        </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-list>
+</ion-content>
