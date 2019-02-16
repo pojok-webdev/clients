@@ -9,12 +9,15 @@ import { ClientService } from '../client.service';
 export class ClientsPage implements OnInit {
   clients
   constructor(private client:ClientService) {
-    client.gets(result => {
-      console.log('result',result)
+    this.client.gets(result => {
       this.clients = result
     })
   }
-
+  updateCategory(id,category){
+    this.client.update({id:id,clientcategory:category},result=>{
+      console.log("update category",result)
+    })
+  }
   ngOnInit() {
   }
 

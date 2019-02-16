@@ -6,12 +6,17 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-menu-toggle auto-hide="false" *ngFor="let p of clients">
-      <ion-item [routerDirection]="'root'" [routerLink]="[p.name]">
-        <ion-icon slot="start" [name]="p.name"></ion-icon>
+    <ion-menu-toggle auto-hide="false" *ngFor="let client of clients">
+      <ion-item [routerDirection]="'root'" [routerLink]="[client.name]">
+        <ion-icon slot="start" [name]="client.name"></ion-icon>
         <ion-label>
-          {{p.name}}
+          {{client.name}}
         </ion-label>
+        <ion-button (click)="updateCategory(client.id,'3')">FFR</ion-button>
+        <ion-button>Platinum</ion-button>
+        <ion-button>Gold</ion-button>
+        <ion-button>Silver</ion-button>
+        <ion-button>Bronze</ion-button>
       </ion-item>
     </ion-menu-toggle>
   </ion-list>

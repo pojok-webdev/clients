@@ -5,9 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class AppvarService {
   server
-  port
+  port = '2119'
   constructor() {
     this.server = 'localhost'
-    this.port = 2119
   }
 }

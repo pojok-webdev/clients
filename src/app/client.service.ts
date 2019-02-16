@@ -12,7 +12,22 @@ obj : Observable<any>
     
   }
   gets(callback){
-    this.obj = this.http.get<any>(this.appvar.server+':'+this.appvar.port+'/gets')
+    console.log("gets invoked",this.appvar.port)
+    this.obj = this.http.get('http://'+this.appvar.server+':'+this.appvar.port+'/clients')
+    this.obj.subscribe(
+      data => {
+        console.log("Data",data)
+        callback(data)
+      },
+      err => {
+        console.log("Err",err)
+        callback(err)
+      }
+    )
+  }
+  update(clientobj,callback){
+    this.obj = this.http
+    .post<any>('http://'+this.appvar.server+':'+this.appvar.port+'/clientupdate',clientobj)
     this.obj.subscribe(
       data => {
         callback(data)
