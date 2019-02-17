@@ -20,11 +20,13 @@ export class ClientsPage implements OnInit {
     }
     return "primary"
   }
-  updateCategory(id,category){
+  updateCategory(id,category,event){
     let _this = this 
-    console.log("id",id)
+    console.log("id",id,event.target)
     this.client.update({id:id,clientcategory:category},result=>{
       console.log("update category",result)
+      
+      //event.target.className.replace('button-md-' + prevColor, 'button-md-' + this.color);
      // _this.getButtonColor(category,category)
     })
   }
