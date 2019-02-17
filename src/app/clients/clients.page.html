@@ -12,11 +12,11 @@
         <ion-label>
           {{client.name}}
         </ion-label>
-        <ion-button (click)="updateCategory(client.id,'3')">FFR</ion-button>
-        <ion-button>Platinum</ion-button>
-        <ion-button>Gold</ion-button>
-        <ion-button>Silver</ion-button>
-        <ion-button>Bronze</ion-button>
+        <ion-button [color]="getButtonColor(client.clientcategory,1)" (click)="updateCategory(client.id,'1')">FFR</ion-button>
+        <ion-button [color]="getButtonColor(client.clientcategory,2)" (click)="updateCategory(client.id,'2')">Platinum</ion-button>
+        <ion-button [color]="getButtonColor(client.clientcategory,3)" (click)="updateCategory(client.id,'3')">Gold</ion-button>
+        <ion-button [color]="getButtonColor(client.clientcategory,4)" (click)="updateCategory(client.id,'4')">Silver</ion-button>
+        <ion-button [color]="getButtonColor(client.clientcategory,5)" (click)="updateCategory(client.id,'5')">Bronze</ion-button>
       </ion-item>
     </ion-menu-toggle>
   </ion-list>
