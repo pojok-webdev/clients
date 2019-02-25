@@ -7,7 +7,7 @@
 <ion-content padding>
   <ion-list>
     <ion-menu-toggle auto-hide="false" *ngFor="let client of clients">
-      <ion-item [routerDirection]="'root'" [routerLink]="[client.name]">
+      <ion-item>
         <ion-icon slot="start" [name]="client.name"></ion-icon>
         <ion-label>
           {{client.name}}
