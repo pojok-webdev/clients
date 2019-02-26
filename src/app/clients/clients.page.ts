@@ -14,23 +14,25 @@ export class ClientsPage implements OnInit {
     })
   }
   getButtonColor(clientCategory,buttonType){
-    //console.log("clientCategory:",clientCategory)
     if(clientCategory==buttonType){
       return "danger"
     }
     return "primary"
   }
   updateCategory(id,category,event){
-    let _this = this 
-    console.log("id",id,event.target)
+    console.log("id",id,event.target.color)
+    let _x = event.target as HTMLElement
+
+    console.log("target",_x.parentElement.children)
+    let _parent = _x.parentElement.children 
+    for(let c=0;c<_parent.length;c++){
+      _parent[c].setAttribute('color','primary')
+    }
     this.client.update({id:id,clientcategory:category},result=>{
       console.log("update category",result)
-      
-      //event.target.className.replace('button-md-' + prevColor, 'button-md-' + this.color);
-      //_this.getButtonColor(category,category)
+      event.target.color = "danger"
     })
   }
   ngOnInit() {
   }
-
 }
