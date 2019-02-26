@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clients By Category</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-menu-toggle auto-hide="false" *ngFor="let client of clients">
+      <ion-item>
+        <ion-icon slot="start" [name]="client.name"></ion-icon>
+        <ion-label>
+          {{client.name}}
+        </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-list>
+</ion-content>

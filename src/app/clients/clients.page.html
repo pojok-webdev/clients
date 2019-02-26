@@ -3,12 +3,17 @@
     <ion-title>clients</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-toolbar>
+  <ion-input placeholder="Search" [(ngModel)]="searchText"></ion-input><ion-button (click)="doSearch()">Do Search</ion-button>
+  <ion-button (click)="goFirst()">First</ion-button>
+  <ion-button (click)="goPrev()">Prev</ion-button>
+  <ion-button (click)="goNext()">Next</ion-button>
+  <ion-button (click)="goLast()">Last</ion-button>
+</ion-toolbar>
 <ion-content padding>
   <ion-list>
     <ion-menu-toggle auto-hide="false" *ngFor="let client of clients">
       <ion-item>
-        <ion-icon slot="start" [name]="client.name"></ion-icon>
         <ion-label>
           {{client.name}}
         </ion-label>

@@ -11,9 +11,49 @@ obj : Observable<any>
   constructor(private appvar:AppvarService,private http:HttpClient) {
     
   }
-  gets(callback){
-    console.log("gets invoked",this.appvar.port)
-    this.obj = this.http.get('http://'+this.appvar.server+':'+this.appvar.port+'/clients')
+  categorygets(obj,callback){
+    this.obj = this.http.get('http://'+this.appvar.server+':'+this.appvar.port+'/categorygets/'+obj.clientcategory)
+    this.obj.subscribe(
+      data => {
+        console.log("Data",data)
+        callback(data)
+      },
+      err => {
+        console.log("Error",err)
+        callback(err)
+      }
+    )
+  }
+  categorycount(obj,callback){
+    this.obj = this.http.get('http://'+this.appvar.server+':'+this.appvar.port+'/categorycount/'+obj.clientcategory)
+    this.obj.subscribe(
+      data => {
+        console.log("Data",data)
+        callback(data)
+      },
+      err => {
+        console.log("Error",err)
+        callback(err)
+      }
+    )
+  }
+  gets(obj,callback){
+    console.log("gets invoked",this.appvar.port,obj)
+    this.obj = this.http.get('http://'+this.appvar.server+':'+this.appvar.port+'/clients/'+obj.segment+'/'+obj.offset)
+    this.obj.subscribe(
+      data => {
+        console.log("Data",data)
+        callback(data)
+      },
+      err => {
+        console.log("Err",err)
+        callback(err)
+      }
+    )
+  }
+  getByName(obj,callback){
+    console.log("get by name invoked",this.appvar.port,obj)
+    this.obj = this.http.get('http://'+this.appvar.server+':'+this.appvar.port+'/clientgetbyname/'+obj.name)
     this.obj.subscribe(
       data => {
         console.log("Data",data)

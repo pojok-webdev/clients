@@ -7,6 +7,6 @@ export class AppvarService {
   server
   port = '2119'
   constructor() {
-    this.server = 'localhost'
+    this.server = '192.168.0.117'
   }
 }
