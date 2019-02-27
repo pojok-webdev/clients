@@ -1,16 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Clients By Category</ion-title>
+    <ion-title>Clients By Category {{title}} ({{count}})</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <ion-menu-toggle auto-hide="false" *ngFor="let client of clients">
+    <ion-menu-toggle auto-hide="false" *ngFor="let client of clients;let i=index;">
       <ion-item>
-        <ion-icon slot="start" [name]="client.name"></ion-icon>
         <ion-label>
-          {{client.name}}
+            {{i}}. {{client.name}}
         </ion-label>
       </ion-item>
     </ion-menu-toggle>

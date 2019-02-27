@@ -12,27 +12,32 @@ export class AppComponent {
   public appPages = [
     {
       title: 'FFR',
-      url: '/clientbypage/1',
+      url: '/clientbycategory/1',
       icon: 'home'
     },
     {
-      title: 'Premium',
-      url: '/clientbypage/2',
+      title: 'Platinum',
+      url: '/clientbycategory/2',
       icon: 'list'
     },
     {
       title: 'Gold',
-      url: '/clientbypage/3',
+      url: '/clientbycategory/3',
       icon: 'home'
     },
     {
       title: 'Silver',
-      url: '/clientbypage/4',
+      url: '/clientbycategory/4',
       icon: 'list'
     },
     {
       title: 'Bronze',
-      url: '/clientbypage/5',
+      url: '/clientbycategory/5',
+      icon: 'list'
+    },
+    {
+      title: 'Uncategorized',
+      url: '/clientbycategory/0',
       icon: 'list'
     },
     {
